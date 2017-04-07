@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700&subset=latin-ext,vietnamese');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,600,700&subset=latin-ext,vietnamese');
+body{
+	font-family: 'Open Sans';
+	font-size: 13px;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+	font-family: 'Roboto';
+}
+.dropdown-menu {font-size: 13px;}
+p.name{display: inline;}
+p.name:first-letter{text-transform: uppercase};
+ul.menu li span.messagelog{white-space: normal !important;}
+.navbar-nav>.messages-menu>.dropdown-menu>li .menu>li>a{
+    white-space: normal !important;
+    color: #000;	
+}
+.post {
+	border-color: #f4f4f4;
+}
+.post-title{
+	font-weight: bold;   
+}
+h4.post-title{
+	text-transform: uppercase;
+	font-size: 14px;
+}
+.post-info, .post-info a {
+	color: #aaa;
+}
+.post-info a:hover{
+	text-decoration: underline;
+}
+.post-detail .post-info{
+	margin-top: 8px;
+	font-size: 85%;
+}
+.post-seperate {
+	margin: 0 5px;
+}

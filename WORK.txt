@@ -1,0 +1,75 @@
+===========09-10-2016================
+- Tạo một bắt đầu chơi ở backend và check điều kiện khởi tạo -ok
+- Tạo một list người chơi được nhận tiền - ok
+- Hiển thị list pin của người chơi ở frontend -ok
+- Select2 để chọn người chơi cấp mã pin chỉ chọn người chơi M1-ok
+- Quản lý người dùng trong backend -ok
+================18-10-2016==================
+- Phải kiểm tra luồng cho nhận ổn chưa 
+- Thêm trường date_end ở hai bảng m5 và m5_map để xác định thời gian chạy cronjob để hiển thị
+- Đăng ký điều kiện nhận tiền khi người chơi đến lv2 thì được đưa vào danh sách người chơi được nhận tiền khi bắt đầu chơi- ok
+- Nếu mà người chơi được GD thì nếu chưa tìm được người cho hết tiền thì vẫn giữ nguyên trạng thái-ok
+-Tính hoa hồng-OK
++ tính hoa hồng trực tiếp: lưu một giá trị trong config để nhân với số tiền PD để đc hoa hồng trực tiếp
++Hoa hồng hệ thống: tìm các người dùng cha để tính được hoa hồng của họ, sẽ tạo 5 biến trong backend để config(roses_sytem_1...)
+- Hiển thị danh sách gives và takes
+- Tạo một bảng người dùng bị ban - ok
+- Tính số lần người dùng bị ban
+- Khi 1 PD đã tìm được người gửi tiền mà đến thời gian gửi mà người dùng chưa gửi thì tài khoản sẽ bị ban
+- Ở giao diện m5mapview thêm nút report, Nút này báo đã gửi tiền và người dùng chưa xác nhận
+
+
+===========Report người chơi=============
+- Thêm một bản report để report lại vấn đề sau(id,m5map_id,member_id,created_at,content)
++ Đã gửi tiền mà người nhận tiền chưa xác nhận
++ Người nhận tiền chưa nhận được tiền
++ Sau 24h nếu không có report thì tự động xác nhận
++ Nếu sau 24h mà người GD report thì ban member PD và tìm người cấp trên để chuyển tiền hộ người cấp dưới
+++ Nếu sau 24h mà người cấp trên ko chuyển tiền và người GD report thì ban cả 2 người chơi và tìm người chơi khác
+chuyển tiền cho người GD
++++ Luồng làm việc
+- Khi người dùng xác nhận chuyển tiền thì tạo một report để xác nhận. nếu đến thời gian và người GD k xác nhận t
+thì tự động xác nhận chuyển tiền thành công
+- Khi người nhận tiền không nhận dc tiền ấn report và người gửi tiền k gửi tiền thì nếu quá thời gian Report thì người
+gửi tiền sẽ lỗi
+- Nút report hiện ra khi
+-- Người PD đã xác nhận chuyền tiền
+-- Người GD Chưa xác nhận chuyển tiền
+======================
+- Chỉnh sửa người dùng chưa thông báo lỗi khi nhập thông tin trùng nhau
+- Làm phạt user
++ Nếu phạt một lần thì phải PD 1 lần
++ Nếu lần thứ 2 thì phạt 3 lần
++ Nếu lần thứ 3 thì vĩnh viễn k dc sử dụng
+
+================11-12-2016==================
++ check lại hệ thống
++ Làm log và gửi email khi
+    - có người dùng đăng ký cho tiền với người nhận
+    - Có người dùng đã gửi tiền khi
+    - Người dùng ko gửi tiền tìm người khác thay thế
+    - Người dùng bị ban
+    - Log: Nhận được hoa hồng
+
+================17-12-2016=================
+1. Tính thời gian cho một lần m5.
+    - Nếu đến thời gian mà chưa có giao dịch thì cộng thêm thời gian
+    - Nếu đã có giao dịch thì phải cộng thời gian cho các cronjob
+2.Làm log
+3. Tính hoa hồng vòng quay thứ nhất
+- Người chơi khi đăng ký pd sẽ nhận hoa hồng
+4. Rút hoa hồng
+
+================27-12-2016=================
+- Nếu kết thúc mapm5 thì phải xóa toàn bộ cron report cho nó
+nếu bây giờ trong thời gian giao dịch, thằng PD đã gửi tiền, thằng GD k xác nhận gửi tiền, Thằng PD report giao dịch, nhưng thời gian hết report lớn hơn thời gian kết thúc giao dịch thì
+
+==============22-03-2017===================
+- Khi hoàn thành xong giao dịch thì cho nó đăng ký GD luôn
+- Mỗi giao dịch có mã số
+- Kết thúc thay bằng hoàn thành
+- Nếu thằng PD chưa ghép giao dịch thì sẽ ghép với người dùng của mình để tạo GD và k khóa
+- Tạo logs người dùng vào file tính theo ngày
+- Thằng gửi thì có thông tin thằng nhận: sdt,số tài khoản NH, chi nhánh và tên chủ tk, còn thằng nhận chỉ có số điện thoại
+- Nhập thông tin ban đầu
+- Viết một action để kiểm tra server chạy ổn hay chưa

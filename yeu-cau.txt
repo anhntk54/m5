@@ -1,0 +1,4 @@
+Pin:
+yêu cẩu mua pin => chuyển pin
+trang chủ => thông tin cá nhân
+trang chu=>tin baif viết

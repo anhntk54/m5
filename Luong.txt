@@ -1,0 +1,9 @@
+
+============Luồng đang hoạt động==========
+1 người đăng ký PD sẽ có 1 trường trong bản M5 với status =1 
+Mỗi lần chạy cron job thì sẽ tìm những PD trong bản M5 đã giao dịch thành công (status = 5) từ đó tạo một id 
+M5  mới để thực hiện nhận tiền, id này này sẽ tính số tiền mà người dùng nhận dc
+- Nếu một PD đã tìm được người nhận tiền thì status = STATUS_TAKE_LIST
+- Nếu quá thời gian để chuyển tiền cho người nhận status = STATUS_GIVE_NOT_COMPLETE
+- Nếu chuyển tiền thành công status = STATUS_END
+- Cronjob để tạo GD cho lần PD này status = STATUS_FINISH

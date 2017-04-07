@@ -1,0 +1,13 @@
+lan:15
+the:16
+trang:17
+lượt 1:
+-trang pd 3tr
+lượt 2:
+-the pd 3tr
+-Lan pd 3tr
+-Trang gd 4tr
+lượt 3
+trang pd 3tr
+lan pd 3tr
+the gd 4tr
